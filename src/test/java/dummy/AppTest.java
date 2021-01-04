@@ -15,16 +15,22 @@ public class AppTest
     static int x;
     
     @Test
-    public void t1()
+    public void victim()
     {
         assertTrue(x == 0);
     }
 
     @Test
-    public void t2()
+    public void polluter1()
     {
         x++;
         assertTrue(x == 1);
+    }
+    @Test
+    public void polluter2()
+    {
+        x++;
+        assertTrue(x == 2);
     }
 
     @Test
