@@ -11,12 +11,20 @@ public class AppTest {
     /**
      * Rigorous Test :-)
      */
-    static int x;
+    static int x = 0;
+    static int y = 0;
     
     @Test
     public void victim()
     {
         assertTrue(x == 0);
+    }
+
+    @Test
+    public void ni()
+    {
+        y++;
+        assertTrue(y == 1);
     }
 
     @Test
