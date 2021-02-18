@@ -25,8 +25,8 @@ public class AppTest {
     @Rule
     public RunTwiceRule runtwice = new RunTwiceRule();
     */
-    @ClassRule
-    public static TestRule runtwice = new TestRule() {
+    @Rule
+    public TestRule runtwice = new TestRule() {
         @Override
         public Statement apply(final Statement base, Description description) {
             return new Statement() {
@@ -38,6 +38,7 @@ public class AppTest {
             };
         }
     };
+    /*
     @Rule
     public Verifier verifier = new Verifier() {
         @Override
@@ -45,6 +46,7 @@ public class AppTest {
             System.out.println("Hello World!");
         }
     };
+    */
     @Before
     public void before() {
         System.out.println("before");
@@ -62,12 +64,14 @@ public class AppTest {
     @Test
     public void victim()
     {
+        System.out.println("victim");
         assertTrue(x == 0);
     }
 
     @Test
     public void ni()
     {
+        System.out.println("ni");
         y++;
         assertTrue(y == 1);
     }
@@ -75,12 +79,14 @@ public class AppTest {
     @Test
     public void polluter1()
     {
+        System.out.println("polluter1");
         x++;
         assertTrue(x == 1);
     }
     @Test
     public void polluter2()
     {
+        System.out.println("polluter2");
         x++;
         assertTrue(x == 2);
     }
@@ -88,6 +94,7 @@ public class AppTest {
     @Test
     public void cleaner()
     {
+        System.out.println("cleaner");
         x = 0;
     }
 }
