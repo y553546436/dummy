@@ -13,6 +13,8 @@ import org.junit.runner.Description;
 import org.junit.ClassRule;
 import org.junit.Before;
 import org.junit.After;
+import org.junit.BeforeClass;
+import org.junit.AfterClass;
 
 import java.util.Arrays;
 
@@ -47,6 +49,14 @@ public class AppTest {
         }
     };
     */
+    @BeforeClass
+    public static void beforeclass() {
+        System.out.println("beforeclass");
+    }
+    @AfterClass
+    public static void afterclass() {
+        System.out.println("afterclass");
+    }
     @Before
     public void before() {
         System.out.println("before");
